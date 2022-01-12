@@ -28,4 +28,4 @@ class Particle:
         self.is_alive = (self.lifespan > 0.01)
 
     def apply_force(self, force):
-        self.velocity += force / 1000      # the 100 here is equal to the mass of the particle
+        self.velocity = force      # the 100 here is equal to the mass of the particle
