@@ -15,9 +15,9 @@ import random
 # @jitclass(spec)
 class Particle:
     def __init__(self):
-        self.position = np.array([float(np.random.randint(0, 1000)), float(np.random.randint(0, 1000))])
+        self.position = np.array([float(np.random.randint(0, 1900)), float(np.random.randint(0, 950))])
         self.velocity = np.array([0.0, 0.0])
-        self.lifespan = 1
+        self.lifespan = 0.5
         self.degrade_rate = np.random.uniform(0.9, 0.998)
         self.is_alive = True
         self.updated = bool(random.getrandbits)

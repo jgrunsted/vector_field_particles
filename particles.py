@@ -23,8 +23,8 @@ class Particles:
         # self.aeval("x=" + str((position[0] - 500)))
         # self.aeval("y=" + str((position[1] - 500)))
         
-        self.st.variables["x"] = (position[0] - 500) / 10
-        self.st.variables["y"] = (position[1] - 500) / 10
+        self.st.variables["x"] = (position[0] - 950) / 10
+        self.st.variables["y"] = (position[1] - 475) / 10
 
         return np.array([self.uExpr(), self.vExpr()])
 
