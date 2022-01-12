@@ -4,8 +4,6 @@ from flask import jsonify
 import numpy as np
 import particles
 
-# commit testing
-
 app = Flask(__name__)
 
 particles = particles.Particles(np.array(["-x-y", "-y+x"]), 2000)
