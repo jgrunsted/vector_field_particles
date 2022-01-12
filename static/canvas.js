@@ -1,0 +1,28 @@
+var canvas = document.querySelector('canvas');
+
+canvas.width = 1000;
+canvas.height = 1000;
+
+var c = canvas.getContext('2d');
+
+const base_url = window.location.href;
+
+function animate() {
+    c.fillStyle = 'rgba(10,10,40,1)';
+    c.fillRect(0, 0, 1000, 1000);
+    $.getJSON(base_url + '/_update_pos', function(particle_data){
+        c.fillStyle = 'rgba(10,10,40,0.3)';
+        c.fillRect(0, 0, 1000, 1000);
+        for (const [key, value] of Object.entries(particle_data)) {
+            const pos_data = value.split(",");
+            c.beginPath();
+            c.arc(pos_data[0].slice(2), pos_data[1].slice(0, -1), 0.7, 0, 2 * Math.PI, false);
+            c.fillStyle = `rgba(255, 255, 255, ${pos_data[2].slice(0, -1)})`;
+            c.fill();
+        }
+    });
+    animate();
+    setTimeout(() => animate(), 17);
+}
+
+animate();

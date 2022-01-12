@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particles</title>
+    <style type="text/css">
+        body {
+            margin: 5;
+        }
+    </style>
+</head>
+<body>
+    <p id="url"></p>
+    <canvas></canvas>
+    <script type=text/javascript src="{{url_for('static', filename='jquery.js') }}"></script>
+    <script src="{{url_for('static', filename='canvas.js')}}">
+        async function loadFile(file) {
+            let text = await file.text();
+            document.getElementById('output').textContent = text;
+        }
+    </script>
+</body>
+</html>
