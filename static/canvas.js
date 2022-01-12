@@ -13,7 +13,6 @@ function animate() {
     $.getJSON(base_url + '/_update_pos', function(particle_data){
         // c.fillStyle = 'rgba(250,250,250,0.01)';
         // c.fillRect(0, 0, 1900, 950);
-        console.log("sent request");
         for (const [key, value] of Object.entries(particle_data)) {
             const pos_data = value.split(",");
             c.beginPath();
